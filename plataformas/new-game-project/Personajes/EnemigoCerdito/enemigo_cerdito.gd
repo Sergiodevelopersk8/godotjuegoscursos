@@ -8,7 +8,7 @@ var direccion = -1
 @onready var anim = $AnimationPlayer
 var player
 var canChangeDirection = true
-enum estados {ANGRY, PATRULLAR}
+enum estados {ANGRY, PATRULLAR, MORIRSE}
 var estadoActual = estados.PATRULLAR
 
 func _ready():
@@ -39,6 +39,7 @@ func _process(delta):
 			direccion = -1
 		elif directionPlayer.x > 0:
 			direccion = 1
+		$Sprite2D.flip_h = true if direccion == 1 else false
 	
 	
 	if estadoActual == estados.PATRULLAR:
@@ -48,9 +49,28 @@ func _process(delta):
 			direccion *= -1
 			rayos.scale.x *= -1
 	
-	$Sprite2D.flip_h = true if direccion == 1 else false
+		$Sprite2D.flip_h = true if direccion == 1 else false
+
+func takeDmg(damage):
+	vida -= damage
+	if vida <= 0 :
+		$dmgPlayer/CollisionShape2D.set_deferred("disabled",true)
+		estadoActual = estados.MORIRSE
+		anim.play("hurt")
+		$CollisionShape2D.set_deferred("disabled",true)
+		await (anim.animation_finished)
+	
+	queue_free()
+
+
 
 
 func _on_ray_timer_timeout():
 	canChangeDirection = true
 	pass # Replace with function body.
+
+
+
+func _on_dmg_player_body_entered(body):
+	if body is Player:
+		body.takeDamage(dmg)

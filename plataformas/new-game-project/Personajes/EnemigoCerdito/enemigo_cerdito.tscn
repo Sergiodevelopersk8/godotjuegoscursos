@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ltgxyc6tof1l"]
+[gd_scene load_steps=6 format=3 uid="uid://ltgxyc6tof1l"]
 
 [ext_resource type="PackedScene" uid="uid://cvqslim0foc6j" path="res://Personajes/personajes.tscn" id="1_ab4iu"]
 [ext_resource type="Script" path="res://Personajes/EnemigoCerdito/enemigo_cerdito.gd" id="2_hpgt1"]
@@ -7,7 +7,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32mld"]
 size = Vector2(20, 25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23uxt"]
+size = Vector2(25, 24)
+
 [node name="EnemigoCerdito" groups=["Enemigos"] instance=ExtResource("1_ab4iu")]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("2_hpgt1")
 
 [node name="Sprite2D" parent="." index="0"]
@@ -16,6 +21,7 @@ hframes = 9
 vframes = 6
 
 [node name="CollisionShape2D" parent="." index="1"]
+visible = false
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_32mld")
 
@@ -26,13 +32,23 @@ autoplay = "Idle"
 
 [node name="RayCastSuelo" type="RayCast2D" parent="Raycast" index="0"]
 target_position = Vector2(0, 20)
+collision_mask = 4
 
 [node name="RayCastMuro" type="RayCast2D" parent="Raycast" index="1"]
 target_position = Vector2(-20, 0)
+collision_mask = 4
 
 [node name="RayTimer" type="Timer" parent="Raycast" index="2"]
 
 [node name="raycastPlayerDetector" type="RayCast2D" parent="." index="4"]
 target_position = Vector2(-50, 0)
 
+[node name="dmgPlayer" type="Area2D" parent="." index="5"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dmgPlayer" index="0"]
+position = Vector2(0.5, 3)
+shape = SubResource("RectangleShape2D_23uxt")
+
 [connection signal="timeout" from="Raycast/RayTimer" to="." method="_on_ray_timer_timeout"]
+[connection signal="body_entered" from="dmgPlayer" to="." method="_on_dmg_player_body_entered"]
