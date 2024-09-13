@@ -1,10 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://btx5a2eak7h6o"]
+[gd_scene load_steps=17 format=3 uid="uid://btx5a2eak7h6o"]
 
 [ext_resource type="Texture2D" uid="uid://bei7x67psb4c4" path="res://Assets_PixelAdventure/Main Characters/Mask Dude.png" id="1_bpe0d"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_ijcur"]
 [ext_resource type="Script" path="res://Player/camera_2d.gd" id="3_rk2ot"]
 [ext_resource type="LabelSettings" uid="uid://cckx0l3uvq558" path="res://Player/GUIText.tres" id="4_i2qdx"]
 [ext_resource type="StyleBox" uid="uid://b7ys6k1gmivun" path="res://GUI/hpGUI.tres" id="5_8o4md"]
+[ext_resource type="AudioStream" uid="uid://ba2hxqf376lg" path="res://Assets_PixelAdventure/Sounds/Jump.ogg" id="6_pi6jh"]
+[ext_resource type="AudioStream" uid="uid://bk01bmd5p2v58" path="res://Assets_PixelAdventure/Sounds/Hit.ogg" id="7_8yb3t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enusm"]
 size = Vector2(19, 22)
@@ -38,6 +40,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [24]
+}
+
+[sub_resource type="Animation" id="Animation_5750k"]
+resource_name = "herido"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39, 40, 41, 42]
 }
 
 [sub_resource type="Animation" id="Animation_5h70d"]
@@ -88,22 +106,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
-}
-
-[sub_resource type="Animation" id="Animation_5750k"]
-resource_name = "herido"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [36, 37, 38, 39, 40, 41, 42]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_puj85"]
@@ -192,5 +194,11 @@ collision_mask = 2
 position = Vector2(7, 0)
 target_position = Vector2(0, 23)
 collision_mask = 2
+
+[node name="Audio Salto" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_pi6jh")
+
+[node name="AudioHerirse" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_8yb3t")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

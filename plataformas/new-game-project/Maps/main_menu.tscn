@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf0s11npv2kyc"]
+
+[ext_resource type="Script" path="res://Maps/main_menu.gd" id="1_qhlty"]
+[ext_resource type="FontFile" uid="uid://6kevsfysjxx2" path="res://Assets_PixelAdventure/Fonts/NokiaCellphoneFC.ttf" id="2_ax4lx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ii0p2"]
+font = ExtResource("2_ax4lx")
+
+[node name="Main_Menu" type="Node"]
+script = ExtResource("1_qhlty")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 23.0
+offset_right = 393.0
+offset_bottom = 66.0
+text = "Plataformas  en godot para entender 
+como funciona
+"
+label_settings = SubResource("LabelSettings_ii0p2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 160.0
+offset_top = 101.0
+offset_right = 314.0
+offset_bottom = 202.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit
+"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Full Screen"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]

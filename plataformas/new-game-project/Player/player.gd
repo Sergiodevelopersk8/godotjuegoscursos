@@ -44,6 +44,7 @@ func procesarNormal(delta):
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
 		velocity.y -= jump
 		anim.play("jump")
+		$"Audio Salto".play()
 	
 	if !is_on_floor():
 		velocity.y += gravity
@@ -67,6 +68,7 @@ func actualizaInterfazFrutas():
 
 func takeDamage(dmg):
 	if estadoActual != estados.HERIDO:
+		$AudioHerirse.play()
 		vida -= dmg
 		anim.play("herido")
 		estadoActual = estados.HERIDO
