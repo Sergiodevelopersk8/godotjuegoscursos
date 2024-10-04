@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://df5s5gnvialfs"]
+
+[ext_resource type="Script" path="res://Personajes/MovingPlatform/platform.gd" id="1_dyq1m"]
+[ext_resource type="Texture2D" uid="uid://i6s3gmq6sfr4" path="res://Assets_PixelAdventure/Traps/Platforms/Brown Off.png" id="1_nplb2"]
+
+[sub_resource type="Curve2D" id="Curve2D_ua3ih"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 52, 38, 0, 0, 0, 0, 75, 38, 0, 0, 0, 0, 122, 35, 0, 0, 0, 0, 157, 15, 0, 0, 0, 0, 52, 38)
+}
+point_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtg6v"]
+size = Vector2(32, 7)
+
+[node name="PlatForm" type="Path2D"]
+curve = SubResource("Curve2D_ua3ih")
+script = ExtResource("1_dyq1m")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(52, 38)
+
+[node name="PlatformCharacter" type="CharacterBody2D" parent="."]
+position = Vector2(16, -16)
+collision_layer = 4
+
+[node name="BrownOff" type="Sprite2D" parent="PlatformCharacter"]
+position = Vector2(109, 39)
+texture = ExtResource("1_nplb2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformCharacter"]
+position = Vector2(109, 39.5)
+shape = SubResource("RectangleShape2D_dtg6v")
