@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cqgr3e2ha01f1"]
+[gd_scene load_steps=15 format=3 uid="uid://cqgr3e2ha01f1"]
 
 [ext_resource type="Texture2D" uid="uid://cbmb5cipyhb2u" path="res://Assets_PixelAdventure/Terrain/Terrain (16x16).png" id="1_5olg3"]
 [ext_resource type="PackedScene" uid="uid://btx5a2eak7h6o" path="res://Player/player.tscn" id="2_26m6x"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://owlwdggvbxt3" path="res://Assets_PixelAdventure/Parallax/parallax-04.png" id="8_lwc3l"]
 [ext_resource type="PackedScene" uid="uid://df5s5gnvialfs" path="res://Personajes/MovingPlatform/platform.tscn" id="9_faqjp"]
 [ext_resource type="PackedScene" uid="uid://bcrtjraaofvwu" path="res://Personajes/MovingPlatform/fall_damage.tscn" id="10_vygxg"]
+[ext_resource type="PackedScene" uid="uid://bucghs271cb52" path="res://Trampas/sierra.tscn" id="11_tmrq2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6cr64"]
 texture = ExtResource("1_5olg3")
@@ -154,5 +155,8 @@ collision_layer = 7
 [node name="CollisionShape2D" parent="FallDamage" index="0"]
 position = Vector2(93, 87)
 shape = SubResource("RectangleShape2D_sku4o")
+
+[node name="Sierra" parent="." instance=ExtResource("11_tmrq2")]
+position = Vector2(251, -40)
 
 [editable path="FallDamage"]
