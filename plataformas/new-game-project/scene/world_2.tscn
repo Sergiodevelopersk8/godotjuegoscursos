@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cqgr3e2ha01f1"]
+[gd_scene load_steps=17 format=3 uid="uid://cqgr3e2ha01f1"]
 
 [ext_resource type="Texture2D" uid="uid://cbmb5cipyhb2u" path="res://Assets_PixelAdventure/Terrain/Terrain (16x16).png" id="1_5olg3"]
 [ext_resource type="PackedScene" uid="uid://btx5a2eak7h6o" path="res://Player/player.tscn" id="2_26m6x"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://owlwdggvbxt3" path="res://Assets_PixelAdventure/Parallax/parallax-04.png" id="8_lwc3l"]
 [ext_resource type="PackedScene" uid="uid://df5s5gnvialfs" path="res://Personajes/MovingPlatform/platform.tscn" id="9_faqjp"]
 [ext_resource type="PackedScene" uid="uid://bcrtjraaofvwu" path="res://Personajes/MovingPlatform/fall_damage.tscn" id="10_vygxg"]
-[ext_resource type="PackedScene" uid="uid://bucghs271cb52" path="res://Trampas/sierra.tscn" id="11_tmrq2"]
+[ext_resource type="PackedScene" uid="uid://brpmo6yh3wc6i" path="res://Trampas/sierra.tscn" id="11_tmrq2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6cr64"]
 texture = ExtResource("1_5olg3")
@@ -86,6 +86,18 @@ sources/0 = SubResource("TileSetAtlasSource_6cr64")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sku4o"]
 size = Vector2(906, 70)
 
+[sub_resource type="Curve2D" id="Curve2D_0t58p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 28, 6, 0, 0, 0, 0, 63, -11, 0, 0, 0, 0, 69, -29, 0, 0, 0, 0, 31, -37, 0, 0, 0, 0, -9, -31, 0, 0, 0, 0, -22, -8, 0, 0, 0, 0, 28, 6)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_4vhns"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 34, -13, 0, 0, 0, 0, 55, -51, 0, 0, 0, 0, -3, -68, 0, 0, 0, 0, -58, -19, 0, 0, 0, 0, -46, 14, 0, 0, 0, 0, 34, -13)
+}
+point_count = 6
+
 [node name="world2" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -157,6 +169,40 @@ position = Vector2(93, 87)
 shape = SubResource("RectangleShape2D_sku4o")
 
 [node name="Sierra" parent="." instance=ExtResource("11_tmrq2")]
-position = Vector2(251, -40)
+position = Vector2(241, -49)
+
+[node name="SierraVerdadera" parent="Sierra" index="0"]
+position = Vector2(9.4819, -37.5223)
+
+[node name="Sprite2D" parent="Sierra/SierraVerdadera" index="0"]
+rotation = 2492.99
+
+[node name="Path2D" parent="Sierra" index="1"]
+position = Vector2(-5, -3)
+curve = SubResource("Curve2D_0t58p")
+
+[node name="PathFollow2D" parent="Sierra/Path2D" index="0"]
+position = Vector2(15.1962, -34.6294)
+rotation = 2.9927
+progress = 112.705
+
+[node name="Sierra2" parent="." instance=ExtResource("11_tmrq2")]
+position = Vector2(380, -1)
+
+[node name="SierraVerdadera" parent="Sierra2" index="0"]
+position = Vector2(41.3461, -26.2929)
+
+[node name="Sprite2D" parent="Sierra2/SierraVerdadera" index="0"]
+rotation = 2492.99
+
+[node name="Path2D" parent="Sierra2" index="1"]
+curve = SubResource("Curve2D_4vhns")
+
+[node name="PathFollow2D" parent="Sierra2/Path2D" index="0"]
+position = Vector2(41.8269, -27.163)
+rotation = -1.06593
+progress = 16.2022
 
 [editable path="FallDamage"]
+[editable path="Sierra"]
+[editable path="Sierra2"]
