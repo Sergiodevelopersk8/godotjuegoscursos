@@ -45,3 +45,5 @@ target_position = Vector2(-50, 0)
 
 [connection signal="timeout" from="Raycast/RayTimer" to="." method="_on_ray_timer_timeout"]
 [connection signal="body_entered" from="dmgPlayer" to="." method="_on_dmg_player_body_entered"]
+
+[editable path="dmgPlayer"]

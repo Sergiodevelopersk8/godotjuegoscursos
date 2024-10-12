@@ -68,9 +68,3 @@ func takeDmg(damage):
 func _on_ray_timer_timeout():
 	canChangeDirection = true
 	pass # Replace with function body.
-
-
-
-func _on_dmg_player_body_entered(body):
-	if body is Player:
-		body.takeDamage(dmg)

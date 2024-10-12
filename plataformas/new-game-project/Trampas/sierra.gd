@@ -31,9 +31,3 @@ func _process(delta):
 	
 	
 	
-
-
-
-func _on_dmg_player_body_entered(body):
-	if body is Player:
-		body.takeDamage(dmg)

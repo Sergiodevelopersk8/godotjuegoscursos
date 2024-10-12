@@ -172,36 +172,36 @@ shape = SubResource("RectangleShape2D_sku4o")
 position = Vector2(241, -49)
 
 [node name="SierraVerdadera" parent="Sierra" index="0"]
-position = Vector2(9.4819, -37.5223)
+position = Vector2(6.92645, -1.50059)
 
 [node name="Sprite2D" parent="Sierra/SierraVerdadera" index="0"]
-rotation = 2492.99
+rotation = 27704.1
 
 [node name="Path2D" parent="Sierra" index="1"]
 position = Vector2(-5, -3)
 curve = SubResource("Curve2D_0t58p")
 
 [node name="PathFollow2D" parent="Sierra/Path2D" index="0"]
-position = Vector2(15.1962, -34.6294)
-rotation = 2.9927
-progress = 112.705
+position = Vector2(12.1503, 1.56207)
+rotation = 0.273009
+progress = 199.047
 
 [node name="Sierra2" parent="." instance=ExtResource("11_tmrq2")]
 position = Vector2(380, -1)
 
 [node name="SierraVerdadera" parent="Sierra2" index="0"]
-position = Vector2(41.3461, -26.2929)
+position = Vector2(2.38101, -2.32859)
 
 [node name="Sprite2D" parent="Sierra2/SierraVerdadera" index="0"]
-rotation = 2492.99
+rotation = 27704.1
 
 [node name="Path2D" parent="Sierra2" index="1"]
 curve = SubResource("Curve2D_4vhns")
 
 [node name="PathFollow2D" parent="Sierra2/Path2D" index="0"]
-position = Vector2(41.8269, -27.163)
-rotation = -1.06593
-progress = 16.2022
+position = Vector2(2.6952, -2.43463)
+rotation = -0.325496
+progress = 264.018
 
 [editable path="FallDamage"]
 [editable path="Sierra"]
