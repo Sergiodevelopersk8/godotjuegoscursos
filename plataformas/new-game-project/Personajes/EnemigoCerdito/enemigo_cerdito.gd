@@ -1,6 +1,14 @@
 extends personajes
 
-var direccion = -1
+var direccion = -1:
+	set(value):
+		if value != direccion:
+			darseVuelta()
+		
+		direccion = value
+
+
+
 @onready var raysuelo : RayCast2D = $Raycast/RayCastSuelo
 @onready var rayMuro : RayCast2D = $Raycast/RayCastMuro
 @onready var rayos  = $Raycast
@@ -9,7 +17,14 @@ var direccion = -1
 var player
 var canChangeDirection = true
 enum estados {ANGRY, PATRULLAR, MORIRSE}
-var estadoActual = estados.PATRULLAR
+var estadoActual = estados.PATRULLAR : 
+	set(value):
+		estadoActual = value
+		match value:
+			estados.ANGRY:
+				anim.play("runAngry")
+			estados.PATRULLAR:
+				anim.play("walk")
 
 func _ready():
 	anim.play("walk")
@@ -38,18 +53,17 @@ func _process(delta):
 		if directionPlayer.x < 0:
 			direccion = -1
 		elif directionPlayer.x > 0:
+			darseVuelta()
 			direccion = 1
 		$Sprite2D.flip_h = true if direccion == 1 else false
 	
 	
 	if estadoActual == estados.PATRULLAR:
 		if canChangeDirection and (rayMuro.is_colliding() or  !raysuelo.is_colliding()):
-			canChangeDirection = false
-			$Raycast/RayTimer.start()
+			darseVuelta()
 			direccion *= -1
-			rayos.scale.x *= -1
 	
-		$Sprite2D.flip_h = true if direccion == 1 else false
+	$Sprite2D.flip_h = true if direccion == 1 else false
 
 func takeDmg(damage):
 	vida -= damage
@@ -68,3 +82,19 @@ func takeDmg(damage):
 func _on_ray_timer_timeout():
 	canChangeDirection = true
 	pass # Replace with function body.
+
+
+func darseVuelta():
+	canChangeDirection = false
+	$Raycast/RayTimer.start()
+	
+	rayos.scale.x *= -1
+	raycastPlayer.scale.x *= -1
+
+
+
+
+func _on_dmg_player_he_hecho_danio() -> void:
+	estadoActual = estados.PATRULLAR
+	#darseVuelta()
+	direccion *= -1

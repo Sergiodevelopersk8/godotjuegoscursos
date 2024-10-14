@@ -44,6 +44,6 @@ target_position = Vector2(-50, 0)
 [node name="dmgPlayer" parent="." index="5" instance=ExtResource("4_sw6n6")]
 
 [connection signal="timeout" from="Raycast/RayTimer" to="." method="_on_ray_timer_timeout"]
-[connection signal="body_entered" from="dmgPlayer" to="." method="_on_dmg_player_body_entered"]
+[connection signal="heHechoDanio" from="dmgPlayer" to="." method="_on_dmg_player_he_hecho_danio"]
 
 [editable path="dmgPlayer"]

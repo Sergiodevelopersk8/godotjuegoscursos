@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cqgr3e2ha01f1"]
+[gd_scene load_steps=18 format=3 uid="uid://cqgr3e2ha01f1"]
 
 [ext_resource type="Texture2D" uid="uid://cbmb5cipyhb2u" path="res://Assets_PixelAdventure/Terrain/Terrain (16x16).png" id="1_5olg3"]
 [ext_resource type="PackedScene" uid="uid://btx5a2eak7h6o" path="res://Player/player.tscn" id="2_26m6x"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://df5s5gnvialfs" path="res://Personajes/MovingPlatform/platform.tscn" id="9_faqjp"]
 [ext_resource type="PackedScene" uid="uid://bcrtjraaofvwu" path="res://Personajes/MovingPlatform/fall_damage.tscn" id="10_vygxg"]
 [ext_resource type="PackedScene" uid="uid://brpmo6yh3wc6i" path="res://Trampas/sierra.tscn" id="11_tmrq2"]
+[ext_resource type="PackedScene" uid="uid://ltgxyc6tof1l" path="res://Personajes/EnemigoCerdito/enemigo_cerdito.tscn" id="12_d602u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6cr64"]
 texture = ExtResource("1_5olg3")
@@ -104,12 +105,12 @@ point_count = 6
 position = Vector2(39, 48)
 tile_set = SubResource("TileSet_i2t1a")
 format = 2
-layer_0/tile_data = PackedInt32Array(-65539, 65536, 8, -65540, 65536, 8, -65538, 65536, 8, -262135, 65536, 8, -262134, 65536, 8, -262133, 65536, 8, -262132, 65536, 8, -262131, 65536, 8, -262130, 65536, 8, -262129, 65536, 8, -65518, 65536, 8, -65517, 65536, 8, -65516, 65536, 8, -65515, 65536, 8, -65514, 65536, 8, -65513, 65536, 8, 23, 65536, 8, 65560, 65536, 8, 65561, 65536, 8, 65562, 65536, 8, 65563, 65536, 8, 65564, 65536, 8, 65565, 65536, 8, 65566, 65536, 8)
+layer_0/tile_data = PackedInt32Array(-65539, 65536, 8, -65540, 65536, 8, -65538, 65536, 8, -262135, 65536, 8, -262134, 65536, 8, -262133, 65536, 8, -262132, 65536, 8, -262131, 65536, 8, -262130, 65536, 8, -262129, 65536, 8, -65518, 65536, 8, -65517, 65536, 8, -65516, 65536, 8, -65515, 65536, 8, -65514, 65536, 8, -65513, 65536, 8, 23, 65536, 8, 65560, 65536, 8, 65561, 65536, 8, 65562, 65536, 8, 65563, 65536, 8, 65564, 65536, 8, 65565, 65536, 8, 65566, 65536, 8, 65567, 65536, 8, 65568, 65536, 8, 65569, 65536, 8, 65571, 65536, 8, 65570, 65536, 8, 65572, 65536, 8)
 
 [node name="Player" parent="." instance=ExtResource("2_26m6x")]
 
 [node name="finDeNivel" parent="Player" instance=ExtResource("3_8nvb5")]
-position = Vector2(501, 31)
+position = Vector2(629, 32)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_base_offset = Vector2(0, 100)
@@ -172,36 +173,39 @@ shape = SubResource("RectangleShape2D_sku4o")
 position = Vector2(241, -49)
 
 [node name="SierraVerdadera" parent="Sierra" index="0"]
-position = Vector2(6.92645, -1.50059)
+position = Vector2(43.1196, -6.77238)
 
 [node name="Sprite2D" parent="Sierra/SierraVerdadera" index="0"]
-rotation = 27704.1
+rotation = 50107.9
 
 [node name="Path2D" parent="Sierra" index="1"]
 position = Vector2(-5, -3)
 curve = SubResource("Curve2D_0t58p")
 
 [node name="PathFollow2D" parent="Sierra/Path2D" index="0"]
-position = Vector2(12.1503, 1.56207)
-rotation = 0.273009
-progress = 199.047
+position = Vector2(47.6899, -3.56365)
+rotation = -0.452154
+progress = 21.8812
 
 [node name="Sierra2" parent="." instance=ExtResource("11_tmrq2")]
 position = Vector2(380, -1)
 
 [node name="SierraVerdadera" parent="Sierra2" index="0"]
-position = Vector2(2.38101, -2.32859)
+position = Vector2(40.5432, -24.8402)
 
 [node name="Sprite2D" parent="Sierra2/SierraVerdadera" index="0"]
-rotation = 27704.1
+rotation = 50107.9
 
 [node name="Path2D" parent="Sierra2" index="1"]
 curve = SubResource("Curve2D_4vhns")
 
 [node name="PathFollow2D" parent="Sierra2/Path2D" index="0"]
-position = Vector2(2.6952, -2.43463)
-rotation = -0.325496
-progress = 264.018
+position = Vector2(40.8599, -25.4131)
+rotation = -1.06594
+progress = 14.1948
+
+[node name="EnemigoCerdito" parent="." instance=ExtResource("12_d602u")]
+position = Vector2(534, 49)
 
 [editable path="FallDamage"]
 [editable path="Sierra"]

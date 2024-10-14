@@ -27,7 +27,7 @@ func _ready():
 
 func _process(delta):
 	$LabelState.text = $StateMachine.state.name
-	if is_on_floor() and numSaltos != 2:
+	if is_on_floor() and numSaltos != 2 and state_machine.state.name != "enAire":
 		numSaltos = 2
 
 
@@ -57,14 +57,14 @@ func _process(delta):
 	#
 	#
 	#move_and_slide()
-#
-#func _process(delta):
-	#for ray in raycastDmg.get_children():
-		#if ray.is_colliding():
-			#var colision = ray.get_collider()
-			#if colision.is_in_group("Enemigos"):
-				#if colision.has_method("takeDmg"):
-					#colision.takeDmg(damage)
+# daño al enemigo
+
+	for ray in raycastDmg.get_children():
+		if ray.is_colliding():
+			var colision = ray.get_collider()
+			if colision.is_in_group("Enemigos"):
+				if colision.has_method("takeDmg"):
+					colision.takeDmg(damage)
 #
 #
 #
