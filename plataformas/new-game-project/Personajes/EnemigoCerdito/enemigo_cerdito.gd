@@ -1,14 +1,5 @@
 extends personajes
 
-var direccion = -1:
-	set(value):
-		if value != direccion:
-			darseVuelta()
-		
-		direccion = value
-
-
-
 @onready var raysuelo : RayCast2D = $Raycast/RayCastSuelo
 @onready var rayMuro : RayCast2D = $Raycast/RayCastMuro
 @onready var rayos  = $Raycast
@@ -25,6 +16,15 @@ var estadoActual = estados.PATRULLAR :
 				anim.play("runAngry")
 			estados.PATRULLAR:
 				anim.play("walk")
+
+var direccion = -1:
+	set(value):
+		if value != direccion:
+			darseVuelta()
+		
+		direccion = value
+
+
 
 func _ready():
 	anim.play("walk")
@@ -60,7 +60,7 @@ func _process(delta):
 	
 	if estadoActual == estados.PATRULLAR:
 		if canChangeDirection and (rayMuro.is_colliding() or  !raysuelo.is_colliding()):
-			darseVuelta()
+			
 			direccion *= -1
 	
 	$Sprite2D.flip_h = true if direccion == 1 else false

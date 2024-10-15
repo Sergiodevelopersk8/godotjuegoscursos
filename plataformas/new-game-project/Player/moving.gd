@@ -16,7 +16,7 @@ func state_physics_process(delta):
 		state_machine.transition_to("Idle")
 	elif !player.is_on_floor():
 		state_machine.transition_to("enAire")
-	elif Input.is_action_just_pressed("ui_accept"):
+	elif  Input.is_action_just_pressed("ui_accept"):
 		state_machine.transition_to("enAire",{Salto = true})
 	
 	

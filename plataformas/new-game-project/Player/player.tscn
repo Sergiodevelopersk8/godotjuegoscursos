@@ -259,6 +259,14 @@ anim_player_path = NodePath("../../AnimationPlayer")
 script = ExtResource("11_302ko")
 anim_player_path = NodePath("../../AnimationPlayer")
 
+[node name="CoyoteTimer" type="Timer" parent="StateMachine/enAire"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BufferjumpTimer" type="Timer" parent="StateMachine/enAire"]
+wait_time = 0.1
+one_shot = true
+
 [node name="takeDamage" type="Node" parent="StateMachine"]
 script = ExtResource("12_ql6rr")
 anim_player_path = NodePath("../../AnimationPlayer")

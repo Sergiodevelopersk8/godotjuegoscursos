@@ -11,6 +11,7 @@ var vida := 10 :
 		vida = val
 		$PlayerGUI/HPProgressBar.value = vida
 var numSaltos =  2
+
 @onready var anim = $AnimationPlayer
 @onready var sprite :=$Sprite2D
 @onready var frutaslabel := $PlayerGUI/HBoxContainer/FrutasLabel
@@ -28,7 +29,11 @@ func _ready():
 func _process(delta):
 	$LabelState.text = $StateMachine.state.name
 	if is_on_floor() and numSaltos != 2 and state_machine.state.name != "enAire":
-		numSaltos = 2
+		reiniciarSalto()
+
+func reiniciarSalto():
+	numSaltos = 2
+
 
 
 #
