@@ -10,7 +10,7 @@ script = ExtResource("1_v4rko")
 [node name="SierraVerdadera" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="SierraVerdadera"]
-rotation = 1944.11
+rotation = 6538.27
 texture = ExtResource("2_8jpr4")
 
 [node name="dmgPlayer" parent="SierraVerdadera" instance=ExtResource("3_kyl7k")]

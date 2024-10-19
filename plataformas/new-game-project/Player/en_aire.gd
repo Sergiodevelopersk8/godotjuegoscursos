@@ -33,7 +33,8 @@ func state_physics_process(delta):
 	
 	
 	player.move_and_slide()
-	
+	if player.is_on_wall():
+		state_machine.transition_to("wallSlide")
 	if player.is_on_floor():
 		state_machine.transition_to("Idle")
 	
@@ -49,7 +50,13 @@ func state_physics_process(delta):
 	elif Input.is_action_just_pressed("ui_accept"):
 		
 		$BufferjumpTimer.start()
-	
+	elif Input.is_action_just_pressed("dash"):
+		state_machine.transition_to("Dash")
+
+
+
+
+
 func state_exit():
 	pass
 	

@@ -13,8 +13,10 @@ var estadoActual = estados.PATRULLAR :
 		estadoActual = value
 		match value:
 			estados.ANGRY:
+				speed = 90
 				anim.play("runAngry")
 			estados.PATRULLAR:
+				speed = 60
 				anim.play("walk")
 
 var direccion = -1:
@@ -94,7 +96,7 @@ func darseVuelta():
 
 
 
-func _on_dmg_player_he_hecho_danio() -> void:
+func _on_dmg_player_he_hecho_danio():
 	estadoActual = estados.PATRULLAR
 	#darseVuelta()
 	direccion *= -1

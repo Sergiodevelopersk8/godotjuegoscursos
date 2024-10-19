@@ -15,5 +15,8 @@ func state_process(delta):
 		state_machine.transition_to("enAire")
 	elif Input.is_action_just_pressed("ui_accept"):
 		state_machine.transition_to("enAire",{Salto = true})
+	elif Input.is_action_just_pressed("dash") and player.canDash:
+		state_machine.transition_to("Dash")
+	
 	
 	
