@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://btx5a2eak7h6o"]
+[gd_scene load_steps=33 format=3 uid="uid://btx5a2eak7h6o"]
 
 [ext_resource type="Texture2D" uid="uid://bei7x67psb4c4" path="res://Assets_PixelAdventure/Main Characters/Mask Dude.png" id="1_bpe0d"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_ijcur"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ckaore37h130l" path="res://Assets_PixelAdventure/Menu/UI/lifebar-1.png" id="5_0so2l"]
 [ext_resource type="Texture2D" uid="uid://53mh0rvj54b1" path="res://Assets_PixelAdventure/Menu/UI/lifebar-2.png" id="6_lvnme"]
 [ext_resource type="AudioStream" uid="uid://ba2hxqf376lg" path="res://Assets_PixelAdventure/Sounds/Jump.ogg" id="6_pi6jh"]
+[ext_resource type="Shader" path="res://Player/TransitionShader.gdshader" id="7_00uu2"]
 [ext_resource type="AudioStream" uid="uid://bk01bmd5p2v58" path="res://Assets_PixelAdventure/Sounds/Hit.ogg" id="7_8yb3t"]
 [ext_resource type="Script" path="res://Player/StateMachine/StateMachine.gd" id="8_bu2s2"]
 [ext_resource type="Script" path="res://Player/idle.gd" id="9_orv3f"]
@@ -185,6 +186,12 @@ texture = ExtResource("5_0so2l")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q0550"]
 texture = ExtResource("6_lvnme")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mpmwm"]
+shader = ExtResource("7_00uu2")
+shader_parameter/circle_size = 0.309
+shader_parameter/screen_width = 426.0
+shader_parameter/screen_height = 240.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2gcxc"]
 size = Vector2(19, 22)
 
@@ -238,6 +245,15 @@ theme_override_styles/fill = SubResource("StyleBoxTexture_q0550")
 max_value = 10.0
 value = 5.0
 show_percentage = false
+
+[node name="ColorRect" type="ColorRect" parent="PlayerGUI"]
+material = SubResource("ShaderMaterial_mpmwm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0295066, 0.0295066, 0.0295066, 1)
 
 [node name="RayCastDmg" type="Node2D" parent="."]
 

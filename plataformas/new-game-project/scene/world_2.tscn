@@ -75,6 +75,23 @@ texture = ExtResource("1_5olg3")
 0:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:9/0/terrains_peering_bit/bottom_right_corner = 0
 0:9/0/terrains_peering_bit/top_right_corner = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+10:5/0 = 0
+9:5/0 = 0
+8:6/0 = 0
+7:6/0 = 0
+6:6/0 = 0
+2:4/0 = 0
+1:4/0 = 0
+0:4/0 = 0
+0:5/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_i2t1a"]
 physics_layer_0/collision_layer = 4
@@ -85,7 +102,7 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_6cr64")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sku4o"]
-size = Vector2(906, 70)
+size = Vector2(1784, 70)
 
 [sub_resource type="Curve2D" id="Curve2D_0t58p"]
 _data = {
@@ -105,12 +122,12 @@ point_count = 6
 position = Vector2(39, 48)
 tile_set = SubResource("TileSet_i2t1a")
 format = 2
-layer_0/tile_data = PackedInt32Array(-65539, 65536, 8, -65540, 65536, 8, -65538, 65536, 8, -262135, 65536, 8, -262134, 65536, 8, -262133, 65536, 8, -262132, 65536, 8, -262131, 65536, 8, -262130, 65536, 8, -262129, 65536, 8, -65518, 65536, 8, -65517, 65536, 8, -65516, 65536, 8, -65515, 65536, 8, -65514, 65536, 8, -65513, 65536, 8, 23, 65536, 8, 65560, 65536, 8, 65561, 65536, 8, 65562, 65536, 8, 65563, 65536, 8, 65564, 65536, 8, 65565, 65536, 8, 65566, 65536, 8, 65567, 65536, 8, 65568, 65536, 8, 65569, 65536, 8, 65571, 65536, 8, 65570, 65536, 8, 65572, 65536, 8)
+layer_0/tile_data = PackedInt32Array(-65539, 65536, 8, -65540, 65536, 8, -65538, 65536, 8, -262135, 65536, 8, -262134, 65536, 8, -262133, 65536, 8, -262132, 65536, 8, -262131, 65536, 8, -262130, 65536, 8, -262129, 65536, 8, -65518, 65536, 8, -65517, 65536, 8, -65516, 65536, 8, -65515, 65536, 8, -65514, 65536, 8, -65513, 65536, 8, 23, 65536, 8, 65560, 65536, 8, 65561, 65536, 8, 65562, 65536, 8, 65563, 65536, 8, 65564, 65536, 8, 65565, 65536, 8, 65566, 65536, 8, 65567, 65536, 8, 65568, 65536, 8, 65569, 65536, 8, 65571, 65536, 8, 65570, 65536, 8, 65572, 65536, 8, 41, 393216, 4, 42, 458752, 4, 43, 524288, 4, 44, 393216, 4, 45, 458752, 4, 46, 524288, 4, -65489, 393216, 4, -65488, 458752, 4, -65487, 524288, 4, -65480, 393216, 4, -65479, 458752, 4, -65478, 524288, 4, -65477, 393216, 4, -65476, 458752, 4, -65475, 524288, 4, -65474, 393216, 4, -65473, 458752, 4, -65472, 524288, 4, -65471, 458752, 4, 56, 393216, 5, 65592, 393216, 6, 131128, 393216, 5, 196664, 393216, 6, 65, 393216, 5, 65601, 393216, 6, 131137, 393216, 5, 196673, 393216, 6)
 
 [node name="Player" parent="." instance=ExtResource("2_26m6x")]
 
 [node name="finDeNivel" parent="Player" instance=ExtResource("3_8nvb5")]
-position = Vector2(629, 32)
+position = Vector2(1087, 1)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_base_offset = Vector2(0, 100)
@@ -166,43 +183,43 @@ position = Vector2(72, 46)
 collision_layer = 7
 
 [node name="CollisionShape2D" parent="FallDamage" index="0"]
-position = Vector2(93, 87)
+position = Vector2(438, 87)
 shape = SubResource("RectangleShape2D_sku4o")
 
 [node name="Sierra" parent="." instance=ExtResource("11_tmrq2")]
 position = Vector2(241, -49)
 
 [node name="SierraVerdadera" parent="Sierra" index="0"]
-position = Vector2(9.14426, -0.879608)
+position = Vector2(29.6697, -39.2274)
 
 [node name="Sprite2D" parent="Sierra/SierraVerdadera" index="0"]
-rotation = 59491.5
+rotation = 70754.7
 
 [node name="Path2D" parent="Sierra" index="1"]
 position = Vector2(-5, -3)
 curve = SubResource("Curve2D_0t58p")
 
 [node name="PathFollow2D" parent="Sierra/Path2D" index="0"]
-position = Vector2(13.4428, 1.92399)
-rotation = 0.273009
-progress = 200.354
+position = Vector2(33.5652, -36.46)
+rotation = -2.9341
+progress = 93.9376
 
 [node name="Sierra2" parent="." instance=ExtResource("11_tmrq2")]
 position = Vector2(380, -1)
 
 [node name="SierraVerdadera" parent="Sierra2" index="0"]
-position = Vector2(-25.6317, 7.12572)
+position = Vector2(35.4889, -56.7188)
 
 [node name="Sprite2D" parent="Sierra2/SierraVerdadera" index="0"]
-rotation = 59491.5
+rotation = 70754.7
 
 [node name="Path2D" parent="Sierra2" index="1"]
 curve = SubResource("Curve2D_4vhns")
 
 [node name="PathFollow2D" parent="Sierra2/Path2D" index="0"]
-position = Vector2(-26.5665, 7.4412)
-rotation = -0.325496
-progress = 233.16
+position = Vector2(34.0851, -57.1302)
+rotation = -2.85647
+progress = 65.2117
 
 [node name="EnemigoCerdito" parent="." instance=ExtResource("12_d602u")]
 position = Vector2(534, 49)
