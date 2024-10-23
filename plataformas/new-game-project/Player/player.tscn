@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://btx5a2eak7h6o"]
+[gd_scene load_steps=36 format=3 uid="uid://btx5a2eak7h6o"]
 
 [ext_resource type="Texture2D" uid="uid://bei7x67psb4c4" path="res://Assets_PixelAdventure/Main Characters/Mask Dude.png" id="1_bpe0d"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_ijcur"]
@@ -188,9 +188,45 @@ texture = ExtResource("6_lvnme")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mpmwm"]
 shader = ExtResource("7_00uu2")
-shader_parameter/circle_size = 0.309
+shader_parameter/circle_size = 1.05
 shader_parameter/screen_width = 426.0
 shader_parameter/screen_height = 240.0
+
+[sub_resource type="Animation" id="Animation_rki0a"]
+resource_name = "TransitionAnim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionColorRect:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.05]
+}
+
+[sub_resource type="Animation" id="Animation_x3wr8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionColorRect:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.05]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_po0vi"]
+_data = {
+"RESET": SubResource("Animation_x3wr8"),
+"TransitionAnim": SubResource("Animation_rki0a")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2gcxc"]
 size = Vector2(19, 22)
@@ -246,7 +282,7 @@ max_value = 10.0
 value = 5.0
 show_percentage = false
 
-[node name="ColorRect" type="ColorRect" parent="PlayerGUI"]
+[node name="TransitionColorRect" type="ColorRect" parent="PlayerGUI"]
 material = SubResource("ShaderMaterial_mpmwm")
 anchors_preset = 15
 anchor_right = 1.0
@@ -254,6 +290,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0295066, 0.0295066, 0.0295066, 1)
+
+[node name="GUIAnimationPlayer" type="AnimationPlayer" parent="PlayerGUI"]
+libraries = {
+"": SubResource("AnimationLibrary_po0vi")
+}
 
 [node name="RayCastDmg" type="Node2D" parent="."]
 

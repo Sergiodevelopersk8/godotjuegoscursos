@@ -6,10 +6,7 @@ var direccion := 0.0
 const jump := 250
 var gravity := 9
 var damage = 1
-var vida := 10 : 
-	set(val):
-		vida = val
-		$PlayerGUI/HPProgressBar.value = vida
+
 var numSaltos =  2
 var canDash = true
 @onready var anim = $AnimationPlayer
@@ -18,12 +15,18 @@ var canDash = true
 @onready var raycastDmg := $RayCastDmg
 @onready var state_machine = $StateMachine
 @onready var dmgColision := $RecibirDanio/CollisionShape2D
-
-
+@onready var hpbar := $PlayerGUI/HPProgressBar
+@onready var gui_animation_player: AnimationPlayer = $PlayerGUI/GUIAnimationPlayer
+var vida := 3 : 
+	set(val):
+		vida = val
+		hpbar.value = vida
 
 func _ready():
-	$PlayerGUI/HPProgressBar.value = vida
-	Global.player = self
+	gui_animation_player.play("TransitionAnim")
+	hpbar.max_value = vida
+	hpbar.value = vida
+	#Global.connect("fruitCollected",actualizaInterfazFrutas)
 
 
 func _process(delta):

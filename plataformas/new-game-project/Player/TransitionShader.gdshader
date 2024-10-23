@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform float circle_size : hint_range(0.0, 1.05) = 0.5f;
+uniform float circle_size : hint_range(0.0, 1.05) = 1.05f;
 uniform float screen_width;
 uniform float screen_height;
 void vertex() {
