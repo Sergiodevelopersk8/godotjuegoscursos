@@ -27,6 +27,7 @@ var vida := 3 :
 		hpbar.value = vida
 
 func _ready():
+	
 	gui_animation_player.play("TransitionAnim")
 	hpbar.max_value = vida
 	hpbar.value = vida
@@ -71,10 +72,22 @@ func takeDamage(dmg):
 #
 #
 func morir():
+	Global.vidas -= 1
+	Save.game_data.VidasJugador -=1
+	Save.save_data()
 	gui_animation_player.play_backwards("TransitionAnim")
 	get_tree().paused = true
 	await(gui_animation_player.animation_finished)
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
+
+
+
+func Transition_to_scene(scene : String):
+	gui_animation_player.play_backwards("TransitionAnim")
+	get_tree().paused = true
+	await(gui_animation_player.animation_finished)
+	get_tree().paused = false
+	get_tree().change_scene_to_file(scene)
 #

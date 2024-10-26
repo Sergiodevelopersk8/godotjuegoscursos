@@ -2,8 +2,8 @@ extends Node
 
 const SAVEFILE = "user://SAVEFILE.save"
 
-var game_data = {
-	
+var game_data = { #solo funciona cuando no existe el archivo de guardado
+	"VidasJugador": 10
 }
 
 func _ready():
@@ -17,7 +17,15 @@ func load_data():
 	if file == null:
 		save_data()
 	else:
-		game_data = file.get_var()
+		var data_saved = file.get_var()
+		for data in game_data.keys():
+			if !data_saved.keys().has(data):
+				game_data[data] = game_data[data]
+				print("ERROR",data,"NO EXISTE EN SAVE  GUARDADO ANTERIORMENTE")
+				print(data, " AGREGADO") 
+	
+		game_data = data_saved
+	
 	save_data()
 	file = null
 

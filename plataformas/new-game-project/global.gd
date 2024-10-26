@@ -7,3 +7,8 @@ var frutas := 0 :
 		$frutasSonido.play()
 	get:
 		return frutas
+
+var vidas : int
+
+func _ready():
+	vidas = Save.game_data.VidasJugador
