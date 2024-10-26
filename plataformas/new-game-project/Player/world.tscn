@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://buu1unaq8l1br"]
+[gd_scene load_steps=15 format=3 uid="uid://buu1unaq8l1br"]
 
 [ext_resource type="PackedScene" uid="uid://btx5a2eak7h6o" path="res://Player/player.tscn" id="1_lhvbk"]
 [ext_resource type="Texture2D" uid="uid://cbmb5cipyhb2u" path="res://Assets_PixelAdventure/Terrain/Terrain (16x16).png" id="2_5r28g"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c1b4eajnc4vcc" path="res://coleccionables/fruta.tscn" id="8_ywmh5"]
 [ext_resource type="PackedScene" uid="uid://ltgxyc6tof1l" path="res://Personajes/EnemigoCerdito/enemigo_cerdito.tscn" id="9_v4jer"]
 [ext_resource type="PackedScene" uid="uid://qwnqorwyurjh" path="res://fin_de_nivel.tscn" id="10_7g67d"]
+[ext_resource type="PackedScene" uid="uid://bcrtjraaofvwu" path="res://Personajes/MovingPlatform/fall_damage.tscn" id="11_mka4r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vx0fw"]
 texture = ExtResource("2_5r28g")
@@ -81,6 +82,9 @@ terrain_set_0/mode = 1
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_vx0fw")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gifd1"]
+size = Vector2(4.51206, 22.5)
 
 [node name="World" type="Node"]
 
@@ -159,3 +163,13 @@ position = Vector2(377, 108)
 
 [node name="fruta6" parent="cosos" instance=ExtResource("8_ywmh5")]
 position = Vector2(427, 107)
+
+[node name="FallDamage" parent="." instance=ExtResource("11_mka4r")]
+position = Vector2(-18, 31)
+scale = Vector2(687.712, 4.32001)
+
+[node name="CollisionShape2D" parent="FallDamage" index="0"]
+position = Vector2(1.29778, 40.3703)
+shape = SubResource("RectangleShape2D_gifd1")
+
+[editable path="FallDamage"]

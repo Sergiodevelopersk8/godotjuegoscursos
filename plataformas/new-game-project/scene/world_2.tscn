@@ -126,9 +126,6 @@ layer_0/tile_data = PackedInt32Array(-65539, 65536, 8, -65540, 65536, 8, -65538,
 
 [node name="Player" parent="." instance=ExtResource("2_26m6x")]
 
-[node name="finDeNivel" parent="Player" instance=ExtResource("3_8nvb5")]
-position = Vector2(1087, 1)
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_base_offset = Vector2(0, 100)
 
@@ -190,39 +187,42 @@ shape = SubResource("RectangleShape2D_sku4o")
 position = Vector2(241, -49)
 
 [node name="SierraVerdadera" parent="Sierra" index="0"]
-position = Vector2(-7.1857, -5.452)
+position = Vector2(-16.7432, -8.1281)
 
 [node name="Sprite2D" parent="Sierra/SierraVerdadera" index="0"]
-rotation = 80560.6
+rotation = 83306.5
 
 [node name="Path2D" parent="Sierra" index="1"]
 position = Vector2(-5, -3)
 curve = SubResource("Curve2D_0t58p")
 
 [node name="PathFollow2D" parent="Sierra/Path2D" index="0"]
-position = Vector2(-1.48851, -2.25678)
+position = Vector2(-11.0442, -4.93238)
 rotation = 0.273009
-progress = 184.887
+progress = 174.994
 
 [node name="Sierra2" parent="." instance=ExtResource("11_tmrq2")]
 position = Vector2(380, -1)
 
 [node name="SierraVerdadera" parent="Sierra2" index="0"]
-position = Vector2(20.1264, -8.31765)
+position = Vector2(-20.8478, 5.51113)
 
 [node name="Sprite2D" parent="Sierra2/SierraVerdadera" index="0"]
-rotation = 80560.6
+rotation = 83306.5
 
 [node name="Path2D" parent="Sierra2" index="1"]
 curve = SubResource("Curve2D_4vhns")
 
 [node name="PathFollow2D" parent="Sierra2/Path2D" index="0"]
-position = Vector2(19.1777, -7.99748)
+position = Vector2(-19.9384, 5.20421)
 rotation = -0.325496
-progress = 281.404
+progress = 240.148
 
 [node name="EnemigoCerdito" parent="." instance=ExtResource("12_d602u")]
 position = Vector2(534, 49)
+
+[node name="finDeNivel" parent="." instance=ExtResource("3_8nvb5")]
+position = Vector2(611, 36)
 
 [editable path="FallDamage"]
 [editable path="Sierra"]
