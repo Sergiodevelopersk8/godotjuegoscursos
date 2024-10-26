@@ -17,7 +17,7 @@ var canDash = true
 @onready var dmgColision := $RecibirDanio/CollisionShape2D
 @onready var hpbar := $PlayerGUI/HPProgressBar
 @onready var gui_animation_player: AnimationPlayer = $PlayerGUI/GUIAnimationPlayer
-@onready var soundfrutas = $Frutas
+@onready var vidas_label = $PlayerGUI/VidasHBoxContainer/VidasLabel
 
 
 
@@ -27,7 +27,7 @@ var vida := 3 :
 		hpbar.value = vida
 
 func _ready():
-	
+	vidas_label.text = "x" + str(Save.game_data.VidasJugador)
 	gui_animation_player.play("TransitionAnim")
 	hpbar.max_value = vida
 	hpbar.value = vida
