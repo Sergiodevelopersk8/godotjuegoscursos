@@ -190,36 +190,36 @@ shape = SubResource("RectangleShape2D_sku4o")
 position = Vector2(241, -49)
 
 [node name="SierraVerdadera" parent="Sierra" index="0"]
-position = Vector2(-19.1641, -24.8635)
+position = Vector2(-7.1857, -5.452)
 
 [node name="Sprite2D" parent="Sierra/SierraVerdadera" index="0"]
-rotation = 70764.6
+rotation = 80560.6
 
 [node name="Path2D" parent="Sierra" index="1"]
 position = Vector2(-5, -3)
 curve = SubResource("Curve2D_0t58p")
 
 [node name="PathFollow2D" parent="Sierra/Path2D" index="0"]
-position = Vector2(-14.5243, -21.2262)
-rotation = 2.08525
-progress = 148.421
+position = Vector2(-1.48851, -2.25678)
+rotation = 0.273009
+progress = 184.887
 
 [node name="Sierra2" parent="." instance=ExtResource("11_tmrq2")]
 position = Vector2(380, -1)
 
 [node name="SierraVerdadera" parent="Sierra2" index="0"]
-position = Vector2(-29.4799, -44.4088)
+position = Vector2(20.1264, -8.31765)
 
 [node name="Sprite2D" parent="Sierra2/SierraVerdadera" index="0"]
-rotation = 70764.6
+rotation = 80560.6
 
 [node name="Path2D" parent="Sierra2" index="1"]
 curve = SubResource("Curve2D_4vhns")
 
 [node name="PathFollow2D" parent="Sierra2/Path2D" index="0"]
-position = Vector2(-30.2216, -43.748)
-rotation = 2.41382
-progress = 140.315
+position = Vector2(19.1777, -7.99748)
+rotation = -0.325496
+progress = 281.404
 
 [node name="EnemigoCerdito" parent="." instance=ExtResource("12_d602u")]
 position = Vector2(534, 49)

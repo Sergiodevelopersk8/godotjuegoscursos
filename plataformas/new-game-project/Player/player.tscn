@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://btx5a2eak7h6o"]
+[gd_scene load_steps=37 format=3 uid="uid://btx5a2eak7h6o"]
 
 [ext_resource type="Texture2D" uid="uid://bei7x67psb4c4" path="res://Assets_PixelAdventure/Main Characters/Mask Dude.png" id="1_bpe0d"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_ijcur"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://Player/wall_slide.gd" id="13_2uaqt"]
 [ext_resource type="Script" path="res://Player/wall_jump.gd" id="14_dhgto"]
 [ext_resource type="Script" path="res://Player/dash.gd" id="16_u26dv"]
+[ext_resource type="AudioStream" uid="uid://di2p4xwb1340l" path="res://Assets_PixelAdventure/Sounds/confirmation_002.ogg" id="18_odlci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enusm"]
 size = Vector2(19, 22)
@@ -192,21 +193,6 @@ shader_parameter/circle_size = 1.05
 shader_parameter/screen_width = 426.0
 shader_parameter/screen_height = 240.0
 
-[sub_resource type="Animation" id="Animation_rki0a"]
-resource_name = "TransitionAnim"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TransitionColorRect:material:shader_parameter/circle_size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.05]
-}
-
 [sub_resource type="Animation" id="Animation_x3wr8"]
 length = 0.001
 tracks/0/type = "value"
@@ -222,6 +208,21 @@ tracks/0/keys = {
 "values": [1.05]
 }
 
+[sub_resource type="Animation" id="Animation_rki0a"]
+resource_name = "TransitionAnim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionColorRect:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.05]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_po0vi"]
 _data = {
 "RESET": SubResource("Animation_x3wr8"),
@@ -232,6 +233,7 @@ _data = {
 size = Vector2(19, 22)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+position = Vector2(0, -1)
 collision_mask = 6
 script = ExtResource("1_ijcur")
 
@@ -292,6 +294,7 @@ grow_vertical = 2
 color = Color(0.0295066, 0.0295066, 0.0295066, 1)
 
 [node name="GUIAnimationPlayer" type="AnimationPlayer" parent="PlayerGUI"]
+process_mode = 3
 libraries = {
 "": SubResource("AnimationLibrary_po0vi")
 }
@@ -374,6 +377,9 @@ collision_mask = 6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RecibirDanio"]
 position = Vector2(0.5, 5)
 shape = SubResource("RectangleShape2D_2gcxc")
+
+[node name="Frutas" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_odlci")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/takeDamage" method="_on_animation_player_animation_finished"]

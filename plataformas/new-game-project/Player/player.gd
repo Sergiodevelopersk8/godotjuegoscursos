@@ -17,6 +17,10 @@ var canDash = true
 @onready var dmgColision := $RecibirDanio/CollisionShape2D
 @onready var hpbar := $PlayerGUI/HPProgressBar
 @onready var gui_animation_player: AnimationPlayer = $PlayerGUI/GUIAnimationPlayer
+@onready var soundfrutas = $Frutas
+
+
+
 var vida := 3 : 
 	set(val):
 		vida = val
@@ -26,12 +30,12 @@ func _ready():
 	gui_animation_player.play("TransitionAnim")
 	hpbar.max_value = vida
 	hpbar.value = vida
-	#Global.connect("fruitCollected",actualizaInterfazFrutas)
+	Global.connect("fruitCollected",actualizaInterfazFrutas)
 
 
 func _process(delta):
 	
-	$LabelState.text = $StateMachine.state.name
+	
 	if is_on_floor() and numSaltos != 2 and state_machine.state.name != "enAire":
 		reiniciarSalto()
 	#leer los raycast
@@ -52,7 +56,9 @@ func reiniciarSalto():
 
 
 func actualizaInterfazFrutas():
-	frutaslabel.text = ("x" + str(Global.frutas))
+	frutaslabel.text = ("x"+str(Global.frutas))
+	
+	
 #
 func takeDamage(dmg):
 	
@@ -65,6 +71,10 @@ func takeDamage(dmg):
 #
 #
 func morir():
+	gui_animation_player.play_backwards("TransitionAnim")
+	get_tree().paused = true
+	await(gui_animation_player.animation_finished)
+	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 #
