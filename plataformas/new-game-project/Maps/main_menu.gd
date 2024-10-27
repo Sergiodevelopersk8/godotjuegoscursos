@@ -1,8 +1,11 @@
 extends Node
+@onready var settings_canvas_layer: CanvasLayer = $SettingsCanvasLayer
 
+func _ready() :
+	pass
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://Player/world.tscn")
+	get_tree().change_scene_to_file("res://Maps/world.tscn")
 
 
 func _on_button_2_pressed():
@@ -10,4 +13,4 @@ func _on_button_2_pressed():
 
 
 func _on_button_3_pressed():
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	settings_canvas_layer.show()

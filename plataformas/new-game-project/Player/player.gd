@@ -6,7 +6,7 @@ var direccion := 0.0
 const jump := 250
 var gravity := 9
 var damage = 1
-
+var vidasMaximas = 10
 var numSaltos =  2
 var canDash = true
 @onready var anim = $AnimationPlayer
@@ -75,11 +75,17 @@ func morir():
 	Global.vidas -= 1
 	Save.game_data.VidasJugador -=1
 	Save.save_data()
-	gui_animation_player.play_backwards("TransitionAnim")
-	get_tree().paused = true
-	await(gui_animation_player.animation_finished)
-	get_tree().paused = false
-	get_tree().reload_current_scene()
+	if Save.game_data.VidasJugador <= 0:
+		Save.game_data.VidasJugador = vidasMaximas
+		Save.save_data()
+		Transition_to_scene("res://Maps/main_menu.tscn")
+	
+	else:
+		gui_animation_player.play_backwards("TransitionAnim")
+		get_tree().paused = true
+		await(gui_animation_player.animation_finished)
+		get_tree().paused = false
+		get_tree().reload_current_scene()
 
 
 

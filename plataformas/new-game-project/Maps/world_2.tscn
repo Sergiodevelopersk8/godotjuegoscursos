@@ -1,20 +1,20 @@
 [gd_scene load_steps=18 format=3 uid="uid://cqgr3e2ha01f1"]
 
-[ext_resource type="Texture2D" uid="uid://cbmb5cipyhb2u" path="res://Assets_PixelAdventure/Terrain/Terrain (16x16).png" id="1_5olg3"]
-[ext_resource type="PackedScene" uid="uid://btx5a2eak7h6o" path="res://Player/player.tscn" id="2_26m6x"]
-[ext_resource type="PackedScene" uid="uid://qwnqorwyurjh" path="res://fin_de_nivel.tscn" id="3_8nvb5"]
-[ext_resource type="Texture2D" uid="uid://cx1qsqa4qwsus" path="res://Assets_PixelAdventure/Parallax/parallax-00.png" id="4_n7ghh"]
-[ext_resource type="Texture2D" uid="uid://d02l7nnnfajd3" path="res://Assets_PixelAdventure/Parallax/parallax-01.png" id="5_48tjr"]
-[ext_resource type="Texture2D" uid="uid://cqgs3aseyvj8m" path="res://Assets_PixelAdventure/Parallax/parallax-02.png" id="6_cgrtx"]
-[ext_resource type="Texture2D" uid="uid://cvngflsps17db" path="res://Assets_PixelAdventure/Parallax/parallax-03.png" id="7_g4v65"]
-[ext_resource type="Texture2D" uid="uid://owlwdggvbxt3" path="res://Assets_PixelAdventure/Parallax/parallax-04.png" id="8_lwc3l"]
-[ext_resource type="PackedScene" uid="uid://df5s5gnvialfs" path="res://Personajes/MovingPlatform/platform.tscn" id="9_faqjp"]
-[ext_resource type="PackedScene" uid="uid://bcrtjraaofvwu" path="res://Personajes/MovingPlatform/fall_damage.tscn" id="10_vygxg"]
-[ext_resource type="PackedScene" uid="uid://brpmo6yh3wc6i" path="res://Trampas/sierra.tscn" id="11_tmrq2"]
-[ext_resource type="PackedScene" uid="uid://ltgxyc6tof1l" path="res://Personajes/EnemigoCerdito/enemigo_cerdito.tscn" id="12_d602u"]
+[ext_resource type="Texture2D" uid="uid://cbmb5cipyhb2u" path="res://Assets_PixelAdventure/Terrain/Terrain (16x16).png" id="1_tlwvt"]
+[ext_resource type="PackedScene" uid="uid://btx5a2eak7h6o" path="res://Player/player.tscn" id="2_mdb3a"]
+[ext_resource type="Texture2D" uid="uid://cx1qsqa4qwsus" path="res://Assets_PixelAdventure/Parallax/parallax-00.png" id="3_ngfc7"]
+[ext_resource type="Texture2D" uid="uid://d02l7nnnfajd3" path="res://Assets_PixelAdventure/Parallax/parallax-01.png" id="4_n8f6n"]
+[ext_resource type="Texture2D" uid="uid://cqgs3aseyvj8m" path="res://Assets_PixelAdventure/Parallax/parallax-02.png" id="5_ylt2a"]
+[ext_resource type="Texture2D" uid="uid://cvngflsps17db" path="res://Assets_PixelAdventure/Parallax/parallax-03.png" id="6_6o2a7"]
+[ext_resource type="Texture2D" uid="uid://owlwdggvbxt3" path="res://Assets_PixelAdventure/Parallax/parallax-04.png" id="7_svc6w"]
+[ext_resource type="PackedScene" uid="uid://df5s5gnvialfs" path="res://Personajes/MovingPlatform/platform.tscn" id="8_wfujp"]
+[ext_resource type="PackedScene" uid="uid://bcrtjraaofvwu" path="res://Personajes/MovingPlatform/fall_damage.tscn" id="9_e84k5"]
+[ext_resource type="PackedScene" uid="uid://brpmo6yh3wc6i" path="res://Trampas/sierra.tscn" id="10_d3nb2"]
+[ext_resource type="PackedScene" uid="uid://ltgxyc6tof1l" path="res://Personajes/EnemigoCerdito/enemigo_cerdito.tscn" id="11_6qgnx"]
+[ext_resource type="PackedScene" uid="uid://qwnqorwyurjh" path="res://fin_de_nivel.tscn" id="12_8oyoy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6cr64"]
-texture = ExtResource("1_5olg3")
+texture = ExtResource("1_tlwvt")
 0:8/0 = 0
 0:8/0/terrain_set = 0
 0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -124,7 +124,7 @@ tile_set = SubResource("TileSet_i2t1a")
 format = 2
 layer_0/tile_data = PackedInt32Array(-65539, 65536, 8, -65540, 65536, 8, -65538, 65536, 8, -262135, 65536, 8, -262134, 65536, 8, -262133, 65536, 8, -262132, 65536, 8, -262131, 65536, 8, -262130, 65536, 8, -262129, 65536, 8, -65518, 65536, 8, -65517, 65536, 8, -65516, 65536, 8, -65515, 65536, 8, -65514, 65536, 8, -65513, 65536, 8, 23, 65536, 8, 65560, 65536, 8, 65561, 65536, 8, 65562, 65536, 8, 65563, 65536, 8, 65564, 65536, 8, 65565, 65536, 8, 65566, 65536, 8, 65567, 65536, 8, 65568, 65536, 8, 65569, 65536, 8, 65571, 65536, 8, 65570, 65536, 8, 65572, 65536, 8, 41, 393216, 4, 42, 458752, 4, 43, 524288, 4, 44, 393216, 4, 45, 458752, 4, 46, 524288, 4, -65489, 393216, 4, -65488, 458752, 4, -65487, 524288, 4, -65480, 393216, 4, -65479, 458752, 4, -65478, 524288, 4, -65477, 393216, 4, -65476, 458752, 4, -65475, 524288, 4, -65474, 393216, 4, -65473, 458752, 4, -65472, 524288, 4, -65471, 458752, 4, 56, 393216, 5, 65592, 393216, 6, 131128, 393216, 5, 196664, 393216, 6, 65, 393216, 5, 65601, 393216, 6, 131137, 393216, 5, 196673, 393216, 6)
 
-[node name="Player" parent="." instance=ExtResource("2_26m6x")]
+[node name="Player" parent="." instance=ExtResource("2_mdb3a")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_base_offset = Vector2(0, 100)
@@ -135,7 +135,7 @@ motion_mirroring = Vector2(1008, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("4_n7ghh")
+texture = ExtResource("3_ngfc7")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.2, 0.2)
@@ -143,7 +143,7 @@ motion_mirroring = Vector2(1008, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("5_48tjr")
+texture = ExtResource("4_n8f6n")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.3, 0.3)
@@ -151,7 +151,7 @@ motion_mirroring = Vector2(1008, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("6_cgrtx")
+texture = ExtResource("5_ylt2a")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.4, 0.4)
@@ -159,7 +159,7 @@ motion_mirroring = Vector2(1008, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("7_g4v65")
+texture = ExtResource("6_6o2a7")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
@@ -168,14 +168,14 @@ motion_mirroring = Vector2(1008, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
 position = Vector2(0, -1)
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("8_lwc3l")
+texture = ExtResource("7_svc6w")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Platform" parent="." instance=ExtResource("9_faqjp")]
+[node name="Platform" parent="." instance=ExtResource("8_wfujp")]
 position = Vector2(-105, -55)
 
-[node name="FallDamage" parent="." instance=ExtResource("10_vygxg")]
+[node name="FallDamage" parent="." instance=ExtResource("9_e84k5")]
 position = Vector2(72, 46)
 collision_layer = 7
 
@@ -183,45 +183,45 @@ collision_layer = 7
 position = Vector2(438, 87)
 shape = SubResource("RectangleShape2D_sku4o")
 
-[node name="Sierra" parent="." instance=ExtResource("11_tmrq2")]
+[node name="Sierra" parent="." instance=ExtResource("10_d3nb2")]
 position = Vector2(241, -49)
 
 [node name="SierraVerdadera" parent="Sierra" index="0"]
-position = Vector2(-21.8342, -9.55357)
+position = Vector2(-15.0836, -32.2403)
 
 [node name="Sprite2D" parent="Sierra/SierraVerdadera" index="0"]
-rotation = 90106.7
+rotation = 94710.5
 
 [node name="Path2D" parent="Sierra" index="1"]
 position = Vector2(-5, -3)
 curve = SubResource("Curve2D_0t58p")
 
 [node name="PathFollow2D" parent="Sierra/Path2D" index="0"]
-position = Vector2(-17.4842, -6.73559)
-rotation = 0.273009
-progress = 168.286
+position = Vector2(-10.4456, -28.522)
+rotation = 2.34126
+progress = 140.128
 
-[node name="Sierra2" parent="." instance=ExtResource("11_tmrq2")]
+[node name="Sierra2" parent="." instance=ExtResource("10_d3nb2")]
 position = Vector2(380, -1)
 
 [node name="SierraVerdadera" parent="Sierra2" index="0"]
-position = Vector2(-57.9947, -19.01)
+position = Vector2(-7.87711, 1.13352)
 
 [node name="Sprite2D" parent="Sierra2/SierraVerdadera" index="0"]
-rotation = 90106.7
+rotation = 94710.5
 
 [node name="Path2D" parent="Sierra2" index="1"]
 curve = SubResource("Curve2D_4vhns")
 
 [node name="PathFollow2D" parent="Sierra2/Path2D" index="0"]
-position = Vector2(-57.4723, -19.6089)
-rotation = 2.41382
-progress = 176.51
+position = Vector2(-6.93774, 0.816487)
+rotation = -0.325496
+progress = 253.86
 
-[node name="EnemigoCerdito" parent="." instance=ExtResource("12_d602u")]
+[node name="EnemigoCerdito" parent="." instance=ExtResource("11_6qgnx")]
 position = Vector2(534, 49)
 
-[node name="finDeNivel" parent="." instance=ExtResource("3_8nvb5")]
+[node name="finDeNivel" parent="." instance=ExtResource("12_8oyoy")]
 position = Vector2(611, 36)
 
 [editable path="FallDamage"]

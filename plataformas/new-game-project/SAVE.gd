@@ -1,9 +1,15 @@
 extends Node
 
 const SAVEFILE = "user://SAVEFILE.save"
-
+#signal data_loaded
 var game_data = { #solo funciona cuando no existe el archivo de guardado
-	"VidasJugador": 10
+	"VidasJugador": 10,
+	"fullscreen_on":true,
+	
+	"screen_res":1,
+	"sfx_vol": -10,
+	"music_vol": -10,
+	"master_vol": -10
 }
 
 func _ready():

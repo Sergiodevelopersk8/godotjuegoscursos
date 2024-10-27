@@ -1,19 +1,19 @@
 [gd_scene load_steps=15 format=3 uid="uid://buu1unaq8l1br"]
 
-[ext_resource type="PackedScene" uid="uid://btx5a2eak7h6o" path="res://Player/player.tscn" id="1_lhvbk"]
-[ext_resource type="Texture2D" uid="uid://cbmb5cipyhb2u" path="res://Assets_PixelAdventure/Terrain/Terrain (16x16).png" id="2_5r28g"]
-[ext_resource type="Texture2D" uid="uid://cx1qsqa4qwsus" path="res://Assets_PixelAdventure/Parallax/parallax-00.png" id="3_3e4v8"]
-[ext_resource type="Texture2D" uid="uid://owlwdggvbxt3" path="res://Assets_PixelAdventure/Parallax/parallax-04.png" id="4_83dck"]
-[ext_resource type="Texture2D" uid="uid://d02l7nnnfajd3" path="res://Assets_PixelAdventure/Parallax/parallax-01.png" id="4_fdyvo"]
-[ext_resource type="Texture2D" uid="uid://cqgs3aseyvj8m" path="res://Assets_PixelAdventure/Parallax/parallax-02.png" id="5_gursf"]
-[ext_resource type="Texture2D" uid="uid://cvngflsps17db" path="res://Assets_PixelAdventure/Parallax/parallax-03.png" id="6_wl4k5"]
-[ext_resource type="PackedScene" uid="uid://c1b4eajnc4vcc" path="res://coleccionables/fruta.tscn" id="8_ywmh5"]
-[ext_resource type="PackedScene" uid="uid://ltgxyc6tof1l" path="res://Personajes/EnemigoCerdito/enemigo_cerdito.tscn" id="9_v4jer"]
-[ext_resource type="PackedScene" uid="uid://qwnqorwyurjh" path="res://fin_de_nivel.tscn" id="10_7g67d"]
-[ext_resource type="PackedScene" uid="uid://bcrtjraaofvwu" path="res://Personajes/MovingPlatform/fall_damage.tscn" id="11_mka4r"]
+[ext_resource type="PackedScene" uid="uid://btx5a2eak7h6o" path="res://Player/player.tscn" id="1_2arq7"]
+[ext_resource type="Texture2D" uid="uid://cbmb5cipyhb2u" path="res://Assets_PixelAdventure/Terrain/Terrain (16x16).png" id="2_olrrr"]
+[ext_resource type="Texture2D" uid="uid://cx1qsqa4qwsus" path="res://Assets_PixelAdventure/Parallax/parallax-00.png" id="3_yth3p"]
+[ext_resource type="Texture2D" uid="uid://d02l7nnnfajd3" path="res://Assets_PixelAdventure/Parallax/parallax-01.png" id="4_w11nc"]
+[ext_resource type="Texture2D" uid="uid://cqgs3aseyvj8m" path="res://Assets_PixelAdventure/Parallax/parallax-02.png" id="5_bwn1j"]
+[ext_resource type="Texture2D" uid="uid://cvngflsps17db" path="res://Assets_PixelAdventure/Parallax/parallax-03.png" id="6_rgctv"]
+[ext_resource type="Texture2D" uid="uid://owlwdggvbxt3" path="res://Assets_PixelAdventure/Parallax/parallax-04.png" id="7_8gesf"]
+[ext_resource type="PackedScene" uid="uid://ltgxyc6tof1l" path="res://Personajes/EnemigoCerdito/enemigo_cerdito.tscn" id="8_3qhx4"]
+[ext_resource type="PackedScene" uid="uid://qwnqorwyurjh" path="res://fin_de_nivel.tscn" id="9_b7dp2"]
+[ext_resource type="PackedScene" uid="uid://c1b4eajnc4vcc" path="res://coleccionables/fruta.tscn" id="10_4at2s"]
+[ext_resource type="PackedScene" uid="uid://bcrtjraaofvwu" path="res://Personajes/MovingPlatform/fall_damage.tscn" id="11_a287p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vx0fw"]
-texture = ExtResource("2_5r28g")
+texture = ExtResource("2_olrrr")
 0:8/0 = 0
 0:8/0/terrain_set = 0
 0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -88,7 +88,7 @@ size = Vector2(4.51206, 22.5)
 
 [node name="World" type="Node"]
 
-[node name="Player" parent="." instance=ExtResource("1_lhvbk")]
+[node name="Player" parent="." instance=ExtResource("1_2arq7")]
 position = Vector2(54, 31)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -106,7 +106,7 @@ motion_mirroring = Vector2(1440, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(-504, -221)
-texture = ExtResource("3_3e4v8")
+texture = ExtResource("3_yth3p")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -115,7 +115,7 @@ motion_mirroring = Vector2(1008, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("4_fdyvo")
+texture = ExtResource("4_w11nc")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.3, 0.3)
@@ -123,7 +123,7 @@ motion_mirroring = Vector2(1008, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("5_gursf")
+texture = ExtResource("5_bwn1j")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.4, 0.4)
@@ -131,7 +131,7 @@ motion_mirroring = Vector2(1008, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("6_wl4k5")
+texture = ExtResource("6_rgctv")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
@@ -139,32 +139,32 @@ motion_mirroring = Vector2(1008, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("4_83dck")
+texture = ExtResource("7_8gesf")
 
-[node name="EnemigoCerdito" parent="." instance=ExtResource("9_v4jer")]
+[node name="EnemigoCerdito" parent="." instance=ExtResource("8_3qhx4")]
 position = Vector2(937, 114)
 
-[node name="finDeNivel" parent="." instance=ExtResource("10_7g67d")]
+[node name="finDeNivel" parent="." instance=ExtResource("9_b7dp2")]
 siguienteNivel = "res://scene/world_2.tscn"
 
 [node name="cosos" type="Node" parent="."]
 
-[node name="fruta2" parent="cosos" instance=ExtResource("8_ywmh5")]
+[node name="fruta2" parent="cosos" instance=ExtResource("10_4at2s")]
 position = Vector2(247, 110)
 
-[node name="fruta3" parent="cosos" instance=ExtResource("8_ywmh5")]
+[node name="fruta3" parent="cosos" instance=ExtResource("10_4at2s")]
 position = Vector2(289, 109)
 
-[node name="fruta4" parent="cosos" instance=ExtResource("8_ywmh5")]
+[node name="fruta4" parent="cosos" instance=ExtResource("10_4at2s")]
 position = Vector2(331, 107)
 
-[node name="fruta5" parent="cosos" instance=ExtResource("8_ywmh5")]
+[node name="fruta5" parent="cosos" instance=ExtResource("10_4at2s")]
 position = Vector2(377, 108)
 
-[node name="fruta6" parent="cosos" instance=ExtResource("8_ywmh5")]
+[node name="fruta6" parent="cosos" instance=ExtResource("10_4at2s")]
 position = Vector2(427, 107)
 
-[node name="FallDamage" parent="." instance=ExtResource("11_mka4r")]
+[node name="FallDamage" parent="." instance=ExtResource("11_a287p")]
 position = Vector2(-18, 31)
 scale = Vector2(687.712, 4.32001)
 
